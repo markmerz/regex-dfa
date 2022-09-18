@@ -49,7 +49,7 @@ impl<T: Clone + Copy + Debug + Eq + Hash> RetTrait for T {}
 
 #[derive(Clone, PartialEq)]
 pub struct Dfa<Ret: 'static> {
-    states: Vec<State<Ret>>,
+    pub states: Vec<State<Ret>>,
 
     /// This is a vector of length `Look::num()` containing all possible starting positions.
     ///

@@ -83,11 +83,11 @@ extern crate utf8_ranges;
 #[macro_use]
 extern crate lazy_static;
 
-mod dfa;
+pub mod dfa;
 mod error;
 mod look;
 mod graph;
-mod nfa;
+pub mod nfa;
 mod regex;
 mod runner;
 mod unicode;
