@@ -62,7 +62,7 @@ pub enum Accept {
 }
 
 #[derive(Clone, Eq, PartialEq)]
-struct State<Tok> {
+pub struct State<Tok> {
     accept: Accept,
     // If accept == Always and accept_tokens > 0, then we had to do some look-ahead in order to
     // determine that we have a match. In that case, accept_state is the index of the state that
