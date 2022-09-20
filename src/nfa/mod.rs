@@ -129,7 +129,7 @@ struct State<Tok> {
 /// two steps.
 #[derive(Clone, Eq, PartialEq)]
 pub struct Nfa<Tok, Variant> {
-    states: Vec<State<Tok>>,
+    pub states: Vec<State<Tok>>,
     // The various possible sets of states that the automaton can start in, depending on what the
     // most recent `char` of input was.
     //

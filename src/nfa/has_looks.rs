@@ -145,7 +145,7 @@ fn class_to_set(cc: &CharClass) -> RangeSet<u32> {
 
 impl Nfa<u32, HasLooks> {
     /// Asserts that the invariants that are supposed to hold do.
-    fn check_invariants(&self) {
+    pub fn check_invariants(&self) {
         // The init state is implicitly the first one, so there are no explicit init states.
         debug_assert!(self.init.is_empty());
 
@@ -310,7 +310,7 @@ impl Nfa<u32, HasLooks> {
     }
 
     /// Adds an eps transition between the given states.
-    fn add_eps(&mut self, from: StateIdx, to: StateIdx) {
+    pub fn add_eps(&mut self, from: StateIdx, to: StateIdx) {
         self.add_look(from, to, Look::Full, Look::Full);
     }
 
@@ -504,7 +504,7 @@ impl Nfa<u32, HasLooks> {
     ///
     /// This maintains the invariant that the last state is always empty (i.e. it doesn't have any
     /// transitions leading out of it). It is also guaranteed to add at least one new state.
-    fn add_expr(&mut self, expr: &Expr) {
+    pub fn add_expr(&mut self, expr: &Expr) {
         use regex_syntax::Expr::*;
 
         match *expr {
